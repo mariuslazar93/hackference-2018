@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <% include ../partials/header.ejs %>
-</head>
 
-<body>
+  <head>
+    <% include ../partials/header.ejs %>
+  </head>
 
-  <% include ../partials/nav.ejs %>
+  <body>
+    <% include ../partials/nav.ejs %>
 
-  <div class="jumbotron text-center">
-    <div class="container">
-      <h1>Welcome to the hack</h1>
+    <div class="jumbotron text-center">
+      <div class="container">
+        <h1>Welcome to the hack</h1>
+        <button id="btn" class="btn btn-primary">Call API</button>
+      </div>
     </div>
-  </div>
 
-</body>
+    <% include ../partials/footer.ejs %>
+  </body>
+
 </html>

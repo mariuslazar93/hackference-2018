@@ -2,6 +2,10 @@
     "extends": "airbnb-base",
     "env": {
       "node": true,
+      "browser": true
+    },
+    "globals": {
+      "axios": true
     },
     "rules": {
       "linebreak-style": 0,

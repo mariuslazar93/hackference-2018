@@ -7,9 +7,12 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon node index.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "debug": "^4.1.0",
     "ejs": "^2.5.6",
     "express": "^4.15.2"
   },
