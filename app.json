@@ -1,0 +1,7 @@
+{
+  "name": "ml-hackference-2018",
+  "description": "A barebones Node.js app using Express 4",
+  "repository": "https://github.com/mariuslazar93/hackference-2018.git",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}

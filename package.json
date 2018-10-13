@@ -1,0 +1,32 @@
+{
+  "name": "hackference-2018",
+  "version": "0.3.0",
+  "description": "A small hack",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "eslint": "5.6.1",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-plugin-import": "2.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mariuslazar93/hackference-2018.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express",
+    "nexmo"
+  ],
+  "license": "MIT"
+}
