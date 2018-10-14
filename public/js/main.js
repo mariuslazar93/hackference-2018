@@ -38,7 +38,7 @@ const loadWebSockets = () => {
 
     if (!data || !data.responses) return;
 
-    let canSubmitForm = data.responses.lengh === 4;
+    let canSubmitForm = true;
 
     data.responses.forEach((input) => {
       const elem = document.getElementById(input.id);
@@ -60,7 +60,8 @@ const loadWebSockets = () => {
 
     if (canSubmitForm) {
       submitFormBtn.classList.remove('hidden');
-      submitFormBtn.focus();
+    } else {
+      submitFormBtn.classList.add('hidden');
     }
   };
 
