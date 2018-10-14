@@ -1,21 +1,18 @@
 // Factory to create notifications
-const createNotification = (text, type = 'warning') => {
+const createNotification = (text, type = 'warning', layout = 'bottomRight') => {
   new Noty({
     text,
     theme: 'nest',
     type,
-    layout: 'bottomRight',
+    layout,
     timeout: 2000,
   }).show();
 };
 
-// Initializing the form and websockets
-const giveFeedbackBtn = document.getElementById('give-feedback');
-const submitFormBtn = document.getElementById('submit-feedback');
+createNotification('Spoiler Alert: Only I can access the API, so don\'t bother', 'error', 'topRight');
 
-giveFeedbackBtn.addEventListener('click', () => {
-  document.getElementById('answer1-wrapper').classList.remove('hidden');
-});
+// Initializing the form and websockets
+const submitFormBtn = document.getElementById('submit-feedback');
 
 submitFormBtn.addEventListener('click', () => {
   document.getElementById('answer1-wrapper').classList.remove('hidden');
@@ -65,6 +62,10 @@ const loadWebSockets = () => {
       submitFormBtn.classList.remove('hidden');
       submitFormBtn.focus();
     }
+  };
+
+  ws.onerror = (e) => {
+    createNotification('Error loading web sockets :(', 'error');
   };
 };
 
