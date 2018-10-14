@@ -10,6 +10,7 @@ const nexmoHelper = require('./nexmo');
 const WebSocketClient = require('./ws');
 
 const PORT = process.env.PORT || 5000;
+const WHITELISTED_PHONES = process.env.WHITELISTED_PHONES.split(',');
 console.log('BASE_URL:', process.env.BASE_URL);
 
 const app = express();
@@ -43,7 +44,11 @@ app.get('/api/test', (req, res) => {
 });
 
 app.get('/api/nexmo-answers', (req, res) => {
-  console.log('got /api/nexmo-answers call');
+  console.log('got /api/nexmo-answers call', req.query);
+
+  if (req.query && req.query.from && WHITELISTED_PHONES.indexOf(req.query.from) === -1) {
+    res.status(400).end();
+  }
 
   const answersId = req.query && req.query.answersId ? req.query.answersId : 'a-1';
 
@@ -89,7 +94,7 @@ app.post('/api/nexmo-responses', (req, res) => {
       break;
     case 2:
       inputValue = dtmf === '1' ? 'yes' : 'no';
-      nextAnswersId = dtmf === '1' ? 'a-3' : '';
+      nextAnswersId = dtmf === '1' ? 'a-3-1' : 'a-3-2';
       break;
     case 3:
       inputValue = dtmf === '1' ? 'yes' : 'no';

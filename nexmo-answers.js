@@ -51,10 +51,10 @@ const answers = {
       eventUrl: [`${process.env.BASE_URL}/api/nexmo-responses`],
     },
   ],
-  'a-3': [
+  'a-3-1': [
     {
       action: 'talk',
-      text: 'Last one. Is Mike Elsmore a great guy?',
+      text: 'Cool. Last one. Is Mike Elsmore a great guy?',
       level: 1,
     },
     {
@@ -62,6 +62,13 @@ const answers = {
       maxDigits: 1,
       timeOut: 5,
       eventUrl: [`${process.env.BASE_URL}/api/nexmo-responses`],
+    },
+  ],
+  'a-3-2': [
+    {
+      action: 'talk',
+      text: 'Oke, see you never then',
+      level: 1,
     },
   ],
   'a-4-1': [
