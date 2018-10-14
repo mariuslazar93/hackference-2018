@@ -1,3 +1,4 @@
+// Factory to create notifications
 const createNotification = (text, type = 'warning') => {
   new Noty({
     text,
@@ -8,9 +9,15 @@ const createNotification = (text, type = 'warning') => {
   }).show();
 };
 
+// Initializing the form and websockets
 const giveFeedbackBtn = document.getElementById('give-feedback');
-giveFeedbackBtn.addEventListener('click', (e) => {
-  loadWebSockets();
+const submitFormBtn = document.getElementById('submit-feedback');
+
+giveFeedbackBtn.addEventListener('click', () => {
+  document.getElementById('answer1-wrapper').classList.remove('hidden');
+});
+
+submitFormBtn.addEventListener('click', () => {
   document.getElementById('answer1-wrapper').classList.remove('hidden');
 });
 
@@ -34,18 +41,31 @@ const loadWebSockets = () => {
 
     if (!data || !data.responses) return;
 
+    let canSubmitForm = data.responses.lengh === 4;
+
     data.responses.forEach((input) => {
       const elem = document.getElementById(input.id);
       const elemWrapper = document.getElementById(`${input.id}-wrapper`);
 
+      if (input.value === 'transforming your speech to text...') {
+        canSubmitForm = false;
+      }
+
       if (elem) {
-        if (!elem.value) {
-          createNotification(`Got ${input.id}: ${input.value}`);
+        if (!elem.value && input.value) {
+          createNotification('Got new answer...');
         }
 
         elem.value = input.value;
         elemWrapper.classList.remove('hidden');
       }
     });
+
+    if (canSubmitForm) {
+      submitFormBtn.classList.remove('hidden');
+      submitFormBtn.focus();
+    }
   };
 };
+
+loadWebSockets();
