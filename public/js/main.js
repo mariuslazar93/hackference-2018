@@ -19,8 +19,8 @@ submitFormBtn.addEventListener('click', () => {
 });
 
 const loadWebSockets = () => {
-  // const ws = new WebSocket('wss://ml-hackference-2018.herokuapp.com/websocket');
-  const ws = new WebSocket('ws://localhost:5000/websocket');
+  const ws = new WebSocket('wss://ml-hackference-2018.herokuapp.com/websocket');
+  // const ws = new WebSocket('ws://localhost:5000/websocket');
 
   // event emmited when connected
   ws.onopen = function () {
