@@ -101,7 +101,7 @@ app.post('/api/nexmo-responses', (req, res) => {
       nextAnswersId = dtmf === '1' ? 'a-4-1' : 'a-4-2';
       break;
     case 4:
-      inputValue = 'loading...';
+      inputValue = 'transforming your speech to text...';
       updateWebSocketAfterSpeechToText(recording_url, conversationUuid, inputId);
       break;
     default:

@@ -53,7 +53,7 @@ const updateNccoAnswers = (CALL_UUID, nextAnswersId) => {
       }
     });
   });
-}
+};
 
 module.exports = {
   downloadRecording,

@@ -11,25 +11,28 @@
     <div class="jumbotron text-center">
       <div class="container">
         <h2 class="mb3">Tell us about Hackference...</h2>
-        <a href="tel:+447520632018" class="btn btn-primary">Do it by phone</a>
+        <div class="mb3">
+          <button id="give-feedback" class="btn btn-primary">Give feedback</button>
+          <a href="tel:+447520632018" class="btn btn-primary">Do it by phone</a>
+        </div>
         <div class="row">
           <form class="col-sm-8 col-sm-push-2">
-            <div class="form-group">
+            <div id="answer1-wrapper" class="form-group hidden">
               <label for="answer1">1. Did you enjoyed Hackference?</label>
               <input type="text" class="form-control" id="answer1" name="answer1" />
             </div>
 
-            <div class="form-group">
+            <div id="answer2-wrapper" class="form-group hidden">
               <label for="answer2">2. Do you really want to continue?</label>
               <input type="text" class="form-control" id="answer2" name="answer2" />
             </div>
 
-            <div class="form-group">
+            <div id="answer3-wrapper" class="form-group hidden">
               <label for="answer3">3. Is Mike Elsmore a great guy?</label>
               <input type="text" class="form-control" id="answer3" name="answer3" />
             </div>
 
-            <div class="form-group">
+            <div id="answer4-wrapper" class="form-group hidden">
               <label for="answer4">4. Can you tell us why?</label>
               <textarea id="answer4" name="answer4" class="form-control" rows="3"></textarea>
             </div>
