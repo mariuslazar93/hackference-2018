@@ -18,7 +18,7 @@ btn.addEventListener('click', (e) => {
 
 // });
 
-const ws = new WebSocket('ws://localhost:5000/websocket');
+const ws = new WebSocket('ws://ml-hackference-2018.herokuapp.com/websocket');
 
 // event emmited when connected
 ws.onopen = function () {
